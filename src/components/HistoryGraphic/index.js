@@ -3,5 +3,5 @@ import {View} from 'react-native';
 import styles from './styles';
 
 export default function HistoryGraphic() {
-  return <View></View>;
+  return <View style={styles.contentGraphic}></View>;
 }
