@@ -6,7 +6,7 @@ export default function CurrentPrice(props) {
   return (
     <View style={styles.headerPrice}>
       <Text style={styles.textPrice}>Last Quotation</Text>
-      <Text style={styles.currentPrice}>$555.444</Text>
+      <Text style={styles.currentPrice}>{props.lastQuotation} $</Text>
     </View>
   );
 }

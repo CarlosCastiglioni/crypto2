@@ -1,10 +1,10 @@
 import React, {useState, useEffect} from 'react';
 import {StatusBar, StyleSheet, SafeAreaView} from 'react-native';
-import {AppColors} from './src/themes/AppColors';
+import {AppColors} from './themes/AppColors';
 
-import CurrentPrice from './src/components/CurrentPrice';
-import HistoryGraphic from './src/components/HistoryGraphic';
-import QuotationsList from './src/components/QuotationsList';
+import CurrentPrice from './components/CurrentPrice';
+import HistoryGraphic from './components/HistoryGraphic';
+import QuotationsList from './components/QuotationsList';
 
 function addZero(number) {
   if (number <= 9) {
@@ -58,10 +58,15 @@ export default function App() {
   const [coinsGraphicList, setCoinsGraphicList] = useState([0]);
   const [days, setDays] = useState(30);
   const [updateDate, setUpdateDate] = useState(true);
+  const [price, setPrice] = useState();
 
   function updateDay(number) {
     setDays(number);
     setUpdateDate(true);
+  }
+
+  function priceQuotation() {
+    setPrice(coinsGraphicList[coinsGraphicList.length - 1]);
   }
 
   useEffect(() => {
@@ -71,6 +76,7 @@ export default function App() {
     getPriceCoinsGraphic(url(days)).then(dateGraphic => {
       setCoinsGraphicList(dateGraphic);
     });
+    priceQuotation();
     if (updateDate) {
       setUpdateDate(false);
     }
@@ -82,7 +88,7 @@ export default function App() {
         backgroundColor={AppColors.background}
         barStyle="light-content"
       />
-      <CurrentPrice />
+      <CurrentPrice lastQuotation={price} />
       <HistoryGraphic infoDataGraphic={coinsGraphicList} />
       <QuotationsList filterDay={updateDay} listTransactions={coinsList} />
     </SafeAreaView>

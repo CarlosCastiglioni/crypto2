@@ -16,6 +16,7 @@ const styles = StyleSheet.create({
   },
   textPrice: {
     color: AppColors.white,
+    opacity: 0.5,
     fontSize: 16,
     fontWeight: 'bold',
   },
