@@ -1,10 +1,11 @@
 import {StyleSheet} from 'react-native';
+import {AppColors} from '../../../themes/AppColors';
 
 const styles = StyleSheet.create({
   mainContent: {
     width: '95%',
     height: 'auto',
-    backgroundColor: '#000000',
+    backgroundColor: AppColors.backgroundList,
     marginLeft: '3%',
     marginBottom: 15,
     borderRadius: 10,
@@ -23,12 +24,14 @@ const styles = StyleSheet.create({
   logBitcoin: {
     width: 40,
     height: 40,
-    marginLeft: 2,
+    marginLeft: 6,
+    marginRight: 6,
   },
-  dayCotation: {
+  dayQuotation: {
     fontSize: 16,
     paddingLeft: 2,
-    color: '#ffffff',
+    color: AppColors.white,
+    opacity: 0.5,
     fontWeight: 'bold',
   },
   contextRigth: {
@@ -36,7 +39,7 @@ const styles = StyleSheet.create({
     alignItems: 'flex-end',
   },
   price: {
-    color: '#ffffff',
+    color: AppColors.white,
     fontSize: 18,
     fontWeight: 'bold',
   },

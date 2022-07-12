@@ -1,20 +1,21 @@
 import {StyleSheet} from 'react-native';
+import {AppColors} from '../../themes/AppColors';
 
 const styles = StyleSheet.create({
   headerPrice: {
     width: '100%',
     height: 'auto',
     alignItems: 'center',
-    marginBottom: 20,
+    marginBottom: 10,
   },
   currentPrice: {
-    color: '#f50d41',
+    color: AppColors.red,
     fontSize: 32,
     fontWeight: 'bold',
-    paddingTop: 20,
+    paddingTop: 5,
   },
   textPrice: {
-    color: '#ffffff',
+    color: AppColors.white,
     fontSize: 16,
     fontWeight: 'bold',
   },
